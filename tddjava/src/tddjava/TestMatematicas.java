@@ -10,7 +10,7 @@ public class TestMatematicas {
 	public void testAdd() {
 		int num1=3;
 		int num2=2;
-		int result=6;
+		int result=5;
 		assertEquals(Matematicas.suma(num1, num2), result);
 		
 	}
