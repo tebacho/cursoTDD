@@ -5,7 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class TestDescuento {
-
 	
 	@Test
 	public void testCalculaPrecioFinalCorrecto() {
@@ -15,32 +14,30 @@ public class TestDescuento {
 		int precioFinal = 90;
 		assertEquals(calculador.calculaPrecioFinal(precioUnitario, descuento), precioFinal);
 	}
-	@Test(expected=AssertionError.class)
+	@Test()
 	public void testCalculaPrecioFinalErrorResultado() {
 		CalculadorPrecioFinal calculador = new CalculadorPrecioFinal();
 		int precioUnitario = 100;
 		int descuento = 10;
 		int precioFinal = 50;
-		assertEquals(calculador.calculaPrecioFinal(precioUnitario, descuento), precioFinal);
+		assertNotEquals(calculador.calculaPrecioFinal(precioUnitario, descuento), precioFinal);
 	}
 	@Test(expected=IllegalArgumentException.class)
 	public void testCalculaPrecioFinalErrorIllegalInputPrecio() {
 		CalculadorPrecioFinal calculador = new CalculadorPrecioFinal();
 		int precioUnitario = -100;
 		int descuento = 10;
-		int precioFinal = 50;
-		assertEquals(calculador.calculaPrecioFinal(precioUnitario, descuento), precioFinal);
+		calculador.calculaPrecioFinal(precioUnitario, descuento);
 	}
 	@Test(expected=IllegalArgumentException.class)
 	public void testCalculaPrecioFinalErrorIllegalInputDescuentoNegativo() {
 		CalculadorPrecioFinal calculador = new CalculadorPrecioFinal();
 		int precioUnitario = 100;
 		int descuento = -10;
-		int precioFinal = 50;
-		assertEquals(calculador.calculaPrecioFinal(precioUnitario, descuento), precioFinal);
+		calculador.calculaPrecioFinal(precioUnitario, descuento);
 	}
 	@Test (expected=IllegalArgumentException.class)
-	public void testCalculaPrecioFinalUllegalInputDescuento200() {
+	public void testCalculaPrecioFinalIllegalInputDescuento200() {
 		CalculadorPrecioFinal calculador = new CalculadorPrecioFinal();
 		int precioUnitario = 100;
 		int descuento = 200;
@@ -86,6 +83,14 @@ public class TestDescuento {
 		int descuento = 50;
 		int precioFinal = 50;
 		assertEquals(calculador.calculaPrecioFinal(precioUnitario, descuento), precioFinal);
+	}
+	@Test()
+	public void testCalculaPrecioFinalRoundUpFail() {
+		CalculadorPrecioFinal calculador = new CalculadorPrecioFinal();
+		int precioUnitario = 99;
+		int descuento = 50;
+		int precioFinal = 49;
+		assertNotEquals(calculador.calculaPrecioFinal(precioUnitario, descuento), precioFinal);
 	}
 	@Test(expected=IllegalArgumentException.class)
 	public void testCalculaPrecioFinalPrecioCero() {

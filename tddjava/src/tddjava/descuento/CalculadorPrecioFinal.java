@@ -7,7 +7,6 @@ public class CalculadorPrecioFinal{
 			throw new IllegalArgumentException();
 		}
 		return (int)Math.round((precioUnitario*((100-descuento)/100.0)));
-		
 	}
 
 }
