@@ -31,6 +31,11 @@ public class Equilatero implements Triangulo {
 	public long getzAxys() {
 		return zAxys;
 	}
+	@Override
+	public void draw() {
+		System.out.println("dibujando un "+TRIANGULO_EQUILATERO);
+		
+	}
 
 
 }

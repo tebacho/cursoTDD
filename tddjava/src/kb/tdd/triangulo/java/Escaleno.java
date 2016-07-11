@@ -32,5 +32,10 @@ public class Escaleno implements Triangulo {
 	public long getzAxys() {
 		return zAxys;
 	}
+	@Override
+	public void draw() {
+		System.out.println("dibujando un "+TRIANGULO_ESCALENO);
+		
+	}
 
 }

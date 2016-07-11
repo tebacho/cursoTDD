@@ -1,14 +1,12 @@
 package kb.tdd.triangulo.test;
 
-import static kb.empleado.exception.ErrorMessageEnum.SALARIO_MENOR_A_CERO;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import kb.empleado.exception.BRException;
 import kb.tdd.triangulo.exception.CustomException;
 import kb.tdd.triangulo.exception.CustomException.ErrorMsg;
 import kb.tdd.triangulo.java.Equilatero;
@@ -37,6 +35,7 @@ public class TrianguloTest {
 		Triangulo triangulo = trianguloUtil.generarTriangulo(xAxys,yAxys,zAxys);
 		assertEquals(mensaje,triangulo.getMensaje());
 		
+		
 	}
 	@Test
 	public void isoscelesTest() {
@@ -52,8 +51,6 @@ public class TrianguloTest {
 		Triangulo triangulo = trianguloUtil.generarTriangulo(xAxys,yAxys,zAxys);
 		assertEquals(mensaje,triangulo.getMensaje());
 	}
-	
-	
 	
 	@Test
 	public void xNegativeInputTest() {
