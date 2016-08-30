@@ -6,7 +6,6 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import cl.kibernum.webverificador.WebVerificador;
@@ -38,8 +37,9 @@ public class WebVerificadorTest {
 		
 		when(result.isOk()).thenReturn(true);
 		new WebVerificador(logger).checkWeb(server, web);
-		verify(logger,times(1)).registerWebIsOk(web);
+		verify(logger).registerWebIsOk(web);
 	}
+	
 	@Test
 	public void testCheckWebNoOk() {
 		
